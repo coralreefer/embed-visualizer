@@ -118,14 +118,15 @@ const DiscordView = React.createClass({
       avatar_url: 'https://cdn.discordapp.com/embed/avatars/0.png',
 
       // hehe
-      darkTheme: true,
-      compactMode: false
+      darkTheme: false,
+      compactMode: false,
+      senderHidden: true,
     };
   },
 
   render() {
     const {
-      compactMode, darkTheme, webhookMode,
+      compactMode, darkTheme, webhookMode, senderHidden,
       username, avatar_url, error,
       data: { content, embed, embeds }
     } = this.props;
@@ -138,10 +139,10 @@ const DiscordView = React.createClass({
         <ErrorHeader error={error} />
         <DiscordViewWrapper darkTheme={darkTheme}>
           <div className={`message-group hide-overflow ${compactMode ? 'compact' : ''}`}>
-            <Avatar url={avatar_url} compactMode={compactMode} />
+            {!senderHidden && <Avatar url={avatar_url} compactMode={compactMode} />}
             <div className='comment'>
               <div className='message first'>
-                <CozyMessageHeader username={username} compactMode={compactMode} />
+                {!senderHidden && <CozyMessageHeader username={username} compactMode={compactMode} />}
                 <div className='message-text'>
                   <MessageBody
                     content={content}
