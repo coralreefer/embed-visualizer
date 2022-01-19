@@ -30,3 +30,7 @@ really support that directly. If in the future most of them end up supporting it
 we can start passing that down to the `generateFrom` function, so that it can emit something else.
 
 [embed docs]: https://discordapp.com/developers/docs/resources/channel#embed-object
+
+
+## More 
+This repo is forked from https://github.com/leovoel/embed-visualizer

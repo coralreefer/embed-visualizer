@@ -11,3 +11,5 @@ ReactDOM.render(
   <App />,
   document.getElementById('root')
 );
+
+export { default as DiscordView } from "./components/discordview"
